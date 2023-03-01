@@ -1,0 +1,57 @@
+How to deploy a MERN project. 
+
+1. Ensure app is on git hub, and create gitignore file. The project
+ needs to stand alone in a repo.  
+- Run following command in terminal with bash.
+	- cd (file name which contains client folder)
+	- echo node_modules/ > .gitignore
+
+- Add following text in gitignore:
+	- node_modules/
+	- coverage/
+	- build/
+	- .DS_Store
+	- .env
+
+- Remove any preexisting git repos with the following commands : 
+	- cd client 
+	- rm -rf .git
+	- rm .gitignore
+
+- initialize git repository : 
+	- cd ..
+	- git init 
+	- git add .
+	- git commit -m "initial commit"
+
+- Now create repo on gitHub and use following commands in terminal : 
+	- git remote add origin {insert url}
+	- git branch -M main
+	- git push -u origin main
+
+refresh page, github should now reflect project. 
+
+
+2. Set up server instance on AWS : 
+
+- To get started, login to AWS. Go to the EC2 Dashboard,
+ click on "Instances". To create the new instance select 
+the "Launch Instances" button in the upper right portion 
+of the screen.
+
+- Now choose server, UBUNTU. Select UBUNTU 20.04 LTS (HVM), 
+SSD volume Type- t2.micro . 20.04 LTS supports MongoDB where 22.04 
+does not. 
+
+- Create key pair : 
+	-  This allows you to connect to instance as admin, key cannot 
+	- be shared. Never upload PEM key to git repo or put in 
+	- public space. Store in safe local folder only. 
+
+	- Create key pair, save to local folder. 
+
+
+
+
+
+
